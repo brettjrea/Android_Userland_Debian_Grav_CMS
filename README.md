@@ -1,1 +1,76 @@
 # Android_Userland_Debian_Grav_CMS
+
+# Installing quickly with a script.
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt autoremove -y
+sudo apt install wget -y
+wget https://raw.githubusercontent.com/brettjrea/Scripts_Fix/master/fixscripts.sh
+wget https://raw.githubusercontent.com/brettjrea/Android_Userland_Debian_Grav_CMS/master/setupwp.sh
+bash fixscripts.sh && bash setupwp.sh
+```
+
+### Install by doing what the script does snip by snip.
+
+### Update, upgrade & clean.
+
+`sudo apt update && sudo apt upgrade -y`
+
+`sudo apt autoremove -y`
+
+### Install git and php.
+
+`sudo apt install git php-curl php-ctype php-dom php-gd php-iconv php-json php-mbstring php-openssl php-phar php-session php-simplexml php-xml php-zip`
+
+### Fix git.
+
+`git config --global http.sslverify "false"`
+
+### Install Composer.
+
+`php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"`
+
+`php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"`
+
+`php composer-setup.php`
+
+`php -r "unlink('composer-setup.php');"`
+
+`mv composer.phar /usr/local/bin/composer`
+
+### Clone grav from github.
+
+`git clone -b master https://github.com/getgrav/grav.git`
+
+### Move into grav directory.
+
+`cd ~/grav`
+
+### Use composer to install dependecies.
+
+`composer install --no-dev -o`
+
+### Run grav installer.
+
+`bin/grav install`
+
+### Install grav admin panel.
+
+`bin/gpm install admin -y`
+
+### Install git-sync.
+
+`bin/gpm install git-sync`
+
+### Check for grav upgrade.
+
+`bin/gpm selfupgrade -f`
+
+### Check for theme plugin updates.
+
+`bin/gpm update -f`
+
+### Start PHP built-in webserver with router.php.
+
+`php -S localhost:8000 system/router.php`
