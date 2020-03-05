@@ -21,7 +21,7 @@ bash fixscripts.sh && bash setupgrav.sh
 
 ### Install git and php.
 
-`sudo apt install git php-common php-curl php-gd php-json php-mbstring php-session php-xml php-zip`
+`sudo apt install git php-common php-curl php-gd php-json php-mbstring php-xml php-zip`
 
 ### Fix git.
 
