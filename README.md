@@ -47,7 +47,9 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 ```
 
-`php composer-setup.php`
+```
+php composer-setup.php
+```
 
 ```
 php -r "unlink('composer-setup.php');"
@@ -65,32 +67,48 @@ git clone -b master https://github.com/getgrav/grav.git
 
 ### Move into grav directory.
 
-`cd ~/grav`
+```
+cd ~/grav
+```
 
 ### Use composer to install dependecies.
 
-`composer install --no-dev -o`
+```
+composer install --no-dev -o
+```
 
 ### Run grav installer.
 
-`bin/grav install`
+```
+bin/grav install
+```
 
 ### Install grav admin panel.
 
-`bin/gpm install admin -y`
+```
+bin/gpm install admin -y
+```
 
 ### Install git-sync.
 
-`bin/gpm install git-sync`
+```
+bin/gpm install git-sync
+```
 
 ### Check for grav upgrade.
 
-`bin/gpm selfupgrade -f`
+```
+bin/gpm selfupgrade -f
+```
 
 ### Check for theme plugin updates.
 
-`bin/gpm update -f`
+```
+bin/gpm update -f
+```
 
 ### Start PHP built-in webserver with router.php.
 
-`php -S localhost:8000 system/router.php`
+```
+php -S localhost:8000 system/router.php
+```
