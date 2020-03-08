@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 ### update, upgrade & clean.
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y &&
+sudo apt upgrade -y &&
 sudo apt autoremove -y
 ### add git and php
 sudo apt install git php-cli php-common php-curl php-gd php-json php-mbstring php-xml php-zip unzip zip -y
