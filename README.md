@@ -30,7 +30,7 @@ sudo apt autoremove -y
 ### Install git and php.
 
 ```
-sudo apt install git php-cli php-common php-curl php-gd php-json php-mbstring php-xml php-zip unzip zip
+sudo apt install git php-cli php-common php-curl php-gd php-json php-mbstring php-xml php-zip unzip zip -y
 ```
 
 ### Fix git.
